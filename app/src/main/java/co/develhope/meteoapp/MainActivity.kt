@@ -3,8 +3,6 @@ package co.develhope.meteoapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import co.develhope.meteoapp.fragments.TodayFragment
-import co.develhope.meteoapp.fragments.TomorrowFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

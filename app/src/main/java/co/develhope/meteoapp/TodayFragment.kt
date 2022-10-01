@@ -1,4 +1,4 @@
-package co.develhope.meteoapp.fragments
+package co.develhope.meteoapp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
