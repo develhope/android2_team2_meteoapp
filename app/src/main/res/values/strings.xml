@@ -52,5 +52,14 @@
     <string name="rc_tv_kmh_thu">10kmh</string>
     <string name="rc_tv_date_thu">15\/09</string>
     <string name="rc_tv_precip_num_thu">20%</string>
+    <!--  Bottom_nav Strings -->
+    <string name="icon_home">Home</string>
+    <string name="icon_today">Today</string>
+    <string name="icon_tomorrow">Tomorrow</string>
+    <string name="icon_date">11</string>
+    <!--  Fragment today strings  -->
+    <string name="tv_today_fragment">Today Fragment</string>
+    <!--  Fragment today strings  -->
+    <string name="tv_tomorrow_fragment">Tomorrow Fragment</string>
 
 </resources>
