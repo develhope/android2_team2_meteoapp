@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeScrAdapter(private val newList: ArrayList<SummaryForecast>): RecyclerView.Adapter<HomeScrAdapter.MyViewHolder>() {
+class HomeScrAdapter(private val newList: ArrayList<SummaryForecast>): RecyclerView.Adapter<HomeScrAdapter.CardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.home_list_item,parent,false)
@@ -36,8 +36,6 @@ class HomeScrAdapter(private val newList: ArrayList<SummaryForecast>): RecyclerV
     }
 
     class CardViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val title: TextView = itemView.findViewById(R.id.palermo_sic)
-        val subtitle: TextView = itemView.findViewById(R.id.tv_next_five)
         val icon: ImageView = itemView.findViewById(R.id.rc_cloudy)
         val tvDays: TextView = itemView.findViewById(R.id.rc_tv_today)
         val gradeMin: TextView = itemView.findViewById(R.id.rc_tv_grade_min)
@@ -51,6 +49,4 @@ class HomeScrAdapter(private val newList: ArrayList<SummaryForecast>): RecyclerV
         val precipitationTxt:TextView = itemView.findViewById(R.id.rc_tv_precipitation_text)
 
     }
-
-    class
 }
