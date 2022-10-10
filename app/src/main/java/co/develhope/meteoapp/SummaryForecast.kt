@@ -14,9 +14,9 @@ data class SummaryForecast(
     val precipitationTxt:String) {
 }
 
-sealed class ForecastScreenItems {
-    data class Forecast(val summaryForecast: SummaryForecast) : ForecastScreenItems()
-    data class Title(val title : String) : ForecastScreenItems()
-    data class Subtitle(val subTitle: String) : ForecastScreenItems()
+sealed class ForecastScreenItem {
+    data class Forecast(val summaryForecast: SummaryForecast) : ForecastScreenItem()
+    data class Title(val title : String) : ForecastScreenItem()
+    data class Subtitle(val subTitle: String) : ForecastScreenItem()
 }
 

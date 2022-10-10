@@ -7,27 +7,49 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeScrAdapter(private val newList: ArrayList<SummaryForecast>): RecyclerView.Adapter<HomeScrAdapter.CardViewHolder>() {
+class HomeScrAdapter(private val newList: List<ForecastScreenItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.home_list_item,parent,false)
-        return CardViewHolder(itemView)
+    override fun getItemViewType(position: Int): Int {
+        return when (newList[position]) {
+            is ForecastScreenItem.Forecast -> CARD
+            is ForecastScreenItem.Subtitle -> SUBTITLE
+            is ForecastScreenItem.Title -> TITLE
+        }
     }
 
-    override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        val currentItem = newList[position]
-        holder.icon.setImageResource(currentItem.icon)
-        holder.tvDays.text = currentItem.days
-        holder.gradeMin.text = currentItem.minTemp
-        holder.gradeMax.text = currentItem.maxTemp
-        holder.precipitation.text = currentItem.precipitation
-        holder.wind.text = currentItem.wind
-        holder.date.text = currentItem.date
-        holder.minTxt.text = currentItem.minTxt
-        holder.maxTxt.text = currentItem.maxTxt
-        holder.windTxt.text = currentItem.windTxt
-        holder.precipitationTxt.text = currentItem.precipitationTxt
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            CARD -> {
+                val itemView = LayoutInflater.from(parent.context).inflate(R.layout.home_list_item, parent, false)
+                CardViewHolder(itemView)
+            }
+            SUBTITLE -> {
+                val itemView = LayoutInflater.from(parent.context).inflate(R.layout.home_list_item, parent, false)
+                SubTitleViewHolder(itemView)
+            }
 
+            TITLE -> {
+                val itemView = LayoutInflater.from(parent.context).inflate(R.layout.home_list_item, parent, false)
+                TitleViewHolder(itemView)
+            }
+
+            else -> {
+                val itemView = LayoutInflater.from(parent.context).inflate(R.layout.home_list_item, parent, false)
+                CardViewHolder(itemView)
+            }
+        }
+
+
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (val currentItem = newList[position]) {
+            is ForecastScreenItem.Forecast -> {
+                (holder as CardViewHolder).bind(currentItem)
+            }
+            is ForecastScreenItem.Subtitle -> TODO()
+            is ForecastScreenItem.Title -> TODO()
+        }
 
     }
 
@@ -35,7 +57,35 @@ class HomeScrAdapter(private val newList: ArrayList<SummaryForecast>): RecyclerV
         return newList.size
     }
 
-    class CardViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(currentItem: ForecastScreenItem.Forecast) {
+            val icon: ImageView = itemView.findViewById(R.id.rc_cloudy)
+            val tvDays: TextView = itemView.findViewById(R.id.rc_tv_today)
+            val gradeMin: TextView = itemView.findViewById(R.id.rc_tv_grade_min)
+            val gradeMax: TextView = itemView.findViewById(R.id.rc_tv_grade_max)
+            val precipitation: TextView = itemView.findViewById(R.id.rc_tv_precipitation)
+            val wind: TextView = itemView.findViewById(R.id.rc_tv_speed)
+            val date: TextView = itemView.findViewById(R.id.rc_tv_date)
+            val minTxt: TextView = itemView.findViewById(R.id.rc_tv_min)
+            val maxTxt: TextView = itemView.findViewById(R.id.rc_tv_max)
+            val windTxt: TextView = itemView.findViewById(R.id.rc_tv_wind)
+            val precipitationTxt: TextView = itemView.findViewById(R.id.rc_tv_precipitation_text)
+
+            icon.setImageResource(currentItem.summaryForecast.icon)
+            tvDays.text = currentItem.summaryForecast.days
+            gradeMin.text = currentItem.summaryForecast.minTemp
+            gradeMax.text = currentItem.summaryForecast.maxTemp
+            precipitation.text = currentItem.summaryForecast.precipitation
+            wind.text = currentItem.summaryForecast.wind
+            date.text = currentItem.summaryForecast.date
+            minTxt.text = currentItem.summaryForecast.minTxt
+            maxTxt.text = currentItem.summaryForecast.maxTxt
+            windTxt.text = currentItem.summaryForecast.windTxt
+            precipitationTxt.text = currentItem.summaryForecast.precipitationTxt
+        }
+    }
+
+    class TitleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val icon: ImageView = itemView.findViewById(R.id.rc_cloudy)
         val tvDays: TextView = itemView.findViewById(R.id.rc_tv_today)
         val gradeMin: TextView = itemView.findViewById(R.id.rc_tv_grade_min)
@@ -46,7 +96,28 @@ class HomeScrAdapter(private val newList: ArrayList<SummaryForecast>): RecyclerV
         val minTxt: TextView = itemView.findViewById(R.id.rc_tv_min)
         val maxTxt: TextView = itemView.findViewById(R.id.rc_tv_max)
         val windTxt: TextView = itemView.findViewById(R.id.rc_tv_wind)
-        val precipitationTxt:TextView = itemView.findViewById(R.id.rc_tv_precipitation_text)
+        val precipitationTxt: TextView = itemView.findViewById(R.id.rc_tv_precipitation_text)
 
+    }
+
+    class SubTitleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val icon: ImageView = itemView.findViewById(R.id.rc_cloudy)
+        val tvDays: TextView = itemView.findViewById(R.id.rc_tv_today)
+        val gradeMin: TextView = itemView.findViewById(R.id.rc_tv_grade_min)
+        val gradeMax: TextView = itemView.findViewById(R.id.rc_tv_grade_max)
+        val precipitation: TextView = itemView.findViewById(R.id.rc_tv_precipitation)
+        val wind: TextView = itemView.findViewById(R.id.rc_tv_speed)
+        val date: TextView = itemView.findViewById(R.id.rc_tv_date)
+        val minTxt: TextView = itemView.findViewById(R.id.rc_tv_min)
+        val maxTxt: TextView = itemView.findViewById(R.id.rc_tv_max)
+        val windTxt: TextView = itemView.findViewById(R.id.rc_tv_wind)
+        val precipitationTxt: TextView = itemView.findViewById(R.id.rc_tv_precipitation_text)
+
+    }
+
+    companion object {
+        const val TITLE = 0
+        const val CARD = 1
+        const val SUBTITLE = 2
     }
 }
