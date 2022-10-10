@@ -11,5 +11,12 @@ data class SummaryForecast(
     val minTxt:String,
     val maxTxt:String,
     val windTxt:String,
-    val precipitationTxt:String)
+    val precipitationTxt:String) {
+}
+
+sealed class ForecastScreenItems {
+    data class Forecast(val summaryForecast: SummaryForecast) : ForecastScreenItems()
+    data class Title(val title : String) : ForecastScreenItems()
+    data class Subtitle(val subTitle: String) : ForecastScreenItems()
+}
 

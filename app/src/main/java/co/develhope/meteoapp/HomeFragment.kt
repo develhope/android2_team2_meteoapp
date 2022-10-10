@@ -14,29 +14,17 @@ class HomeFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<SummaryForecast>
 
-    lateinit var iconId: Array<Int>
-    lateinit var tvDays: Array<String>
-    lateinit var gradeMin: Array<String>
-    lateinit var gradeMax: Array<String>
-    lateinit var precipitation: Array<String>
-    lateinit var wind: Array<String>
-    lateinit var date: Array<String>
-    lateinit var minTxt: Array<String>
-    lateinit var maxTxt: Array<String>
-    lateinit var windTxt: Array<String>
-    lateinit var precipitationTxt: Array<String>
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
 
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dataInitialize()
+        createList()
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.home_recycler_view)
         recyclerView.layoutManager = layoutManager
@@ -45,102 +33,115 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
-    private fun dataInitialize(){
+    val list = ArrayList<SummaryForecast>()
 
-        newArrayList = arrayListOf()
+    private val newList = ArrayList<ForecastScreenItems>()
 
-        iconId = arrayOf(
-            R.drawable.ic_sun,
-            R.drawable.ic_sun_cloud,
-            R.drawable.ic_sun,
-            R.drawable.ic_raining,
-            R.drawable.ic_sun
+    private fun createList() {
+        newList.add(ForecastScreenItems.Title("Palermo, Sicilia"))
+        newList.add(
+            ForecastScreenItems.Forecast(
+                SummaryForecast(
+                    minTemp = "",
+                    maxTemp = "",
+                    precipitation = "",
+                    wind = "",
+                    icon = 0,
+                    days = "",
+                    date = "",
+                    minTxt = "",
+                    maxTxt = "",
+                    windTxt = "",
+                    precipitationTxt = ""
+                )
+            )
         )
-        tvDays = arrayOf(
-            getString(R.string.rc_tv_tomorrow),
-            getString(R.string.rc_tv_monday),
-            getString(R.string.rc_tv_tuesday),
-            getString(R.string.rc_tv_wednesday),
-            getString(R.string.rc_tv_thursday)
+        newList.add(ForecastScreenItems.Subtitle("Next 5 days"))
+        newList.add(
+            ForecastScreenItems.Forecast(
+                SummaryForecast(
+                    minTemp = "",
+                    maxTemp = "",
+                    precipitation = "",
+                    wind = "",
+                    icon = 0,
+                    days = "",
+                    date = "",
+                    minTxt = "",
+                    maxTxt = "",
+                    windTxt = "",
+                    precipitationTxt = ""
+                )
+            )
+        )
+        newList.add(
+            ForecastScreenItems.Forecast(
+                SummaryForecast(
+                    minTemp = "",
+                    maxTemp = "",
+                    precipitation = "",
+                    wind = "",
+                    icon = 0,
+                    days = "",
+                    date = "",
+                    minTxt = "",
+                    maxTxt = "",
+                    windTxt = "",
+                    precipitationTxt = ""
+                )
+            )
+        )
+        newList.add(
+            ForecastScreenItems.Forecast(
+                SummaryForecast(
+                    minTemp = "",
+                    maxTemp = "",
+                    precipitation = "",
+                    wind = "",
+                    icon = 0,
+                    days = "",
+                    date = "",
+                    minTxt = "",
+                    maxTxt = "",
+                    windTxt = "",
+                    precipitationTxt = ""
+                )
+            )
+        )
+        newList.add(
+            ForecastScreenItems.Forecast(
+                SummaryForecast(
+                    minTemp = "",
+                    maxTemp = "",
+                    precipitation = "",
+                    wind = "",
+                    icon = 0,
+                    days = "",
+                    date = "",
+                    minTxt = "",
+                    maxTxt = "",
+                    windTxt = "",
+                    precipitationTxt = ""
+                )
+            )
+        )
+        newList.add(
+            ForecastScreenItems.Forecast(
+                SummaryForecast(
+                    minTemp = "",
+                    maxTemp = "",
+                    precipitation = "",
+                    wind = "",
+                    icon = 0,
+                    days = "",
+                    date = "",
+                    minTxt = "",
+                    maxTxt = "",
+                    windTxt = "",
+                    precipitationTxt = ""
+                )
+            )
         )
 
-        gradeMin = arrayOf(
-            getString(R.string.rc_tv_grade_min_tom),
-            getString(R.string.rc_tv_grade_min_mon),
-            getString(R.string.rc_tv_grade_min_tue),
-            getString(R.string.rc_tv_grade_min_wed),
-            getString(R.string.rc_tv_grade_min_thu),
-        )
-
-        gradeMax = arrayOf(
-            getString(R.string.rc_tv_grade_max_tom),
-            getString(R.string.rc_tv_grade_max_mon),
-            getString(R.string.rc_tv_grade_max_tue),
-            getString(R.string.rc_tv_grade_max_wed),
-            getString(R.string.rc_tv_grade_max_thu),
-        )
-
-        precipitation = arrayOf(
-            getString(R.string.rc_tv_precip_num_tom),
-            getString(R.string.rc_tv_precip_num_mon),
-            getString(R.string.rc_tv_precip_num_tue),
-            getString(R.string.rc_tv_precip_num_wed),
-            getString(R.string.rc_tv_precip_num_thu)
-
-        )
-
-        wind = arrayOf(
-            getString(R.string.rc_tv_kmh_tom),
-            getString(R.string.rc_tv_kmh_mon),
-            getString(R.string.rc_tv_kmh_tue),
-            getString(R.string.rc_tv_kmh_wed),
-            getString(R.string.rc_tv_kmh_thu)
-        )
-
-        date = arrayOf(
-            getString(R.string.rc_tv_date_tom),
-            getString(R.string.rc_tv_date_mon),
-            getString(R.string.rc_tv_date_tue),
-            getString(R.string.rc_tv_date_wed),
-            getString(R.string.rc_tv_date_thu)
-        )
-
-        minTxt = arrayOf(
-            getString(R.string.rc_tv_min_tom),
-            getString(R.string.rc_tv_min_tom),
-            getString(R.string.rc_tv_min_tom),
-            getString(R.string.rc_tv_min_tom),
-            getString(R.string.rc_tv_min_tom)
-        )
-
-        maxTxt = arrayOf(
-            getString(R.string.rc_tv_max_tom),
-            getString(R.string.rc_tv_max_tom),
-            getString(R.string.rc_tv_max_tom),
-            getString(R.string.rc_tv_max_tom),
-            getString(R.string.rc_tv_max_tom)
-        )
-
-        windTxt = arrayOf(
-            getString(R.string.rc_tv_wind_tom),
-            getString(R.string.rc_tv_wind_tom),
-            getString(R.string.rc_tv_wind_tom),
-            getString(R.string.rc_tv_wind_tom),
-            getString(R.string.rc_tv_wind_tom)
-        )
-
-        precipitationTxt = arrayOf(
-            getString(R.string.rc_tv_precip_tom),
-            getString(R.string.rc_tv_precip_tom),
-            getString(R.string.rc_tv_precip_tom),
-            getString(R.string.rc_tv_precip_tom),
-            getString(R.string.rc_tv_precip_tom)
-        )
-
-        for (i in iconId.indices){
-            val summaryForecast = SummaryForecast(gradeMin[i],gradeMax[i],precipitation[i], wind[i],iconId[i],
-                tvDays[i],date[i],minTxt[i],maxTxt[i],windTxt[i],precipitationTxt[i])
-            newArrayList.add(summaryForecast)
-        }
     }
 }
