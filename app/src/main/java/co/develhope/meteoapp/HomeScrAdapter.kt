@@ -120,4 +120,6 @@ class HomeScrAdapter(private val newList: List<ForecastScreenItem>) : RecyclerVi
         const val CARD = 1
         const val SUBTITLE = 2
     }
+
+
 }
