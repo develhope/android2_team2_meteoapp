@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.home_recycler_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = HomeScrAdapter(newArrayList)
+        adapter = HomeScrAdapter(newList)
         recyclerView.adapter = adapter
     }
 
