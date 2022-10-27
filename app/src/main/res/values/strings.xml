@@ -61,5 +61,6 @@
     <string name="tv_today_fragment">Today Fragment</string>
     <!--  Fragment today strings  -->
     <string name="tv_tomorrow_fragment">Tomorrow Fragment</string>
+    <string name="icon_holder">Icon Holder</string>
 
 </resources>
