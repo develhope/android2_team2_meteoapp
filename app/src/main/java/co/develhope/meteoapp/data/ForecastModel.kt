@@ -4,8 +4,8 @@ import co.develhope.meteoapp.SummaryForecast
 import co.develhope.meteoapp.ForecastScreenItem
 
 object ForecastModel {
-    var list = ArrayList<ForecastScreenItem>()
     fun getForecastItems(): ArrayList<ForecastScreenItem> {
+        val list = ArrayList<ForecastScreenItem>()
         list.add(ForecastScreenItem.Title("Palermo, Sicilia"))
         list.add(
             ForecastScreenItem.Forecast(
