@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/today_layout"
     android:layout_width="match_parent"
-    android:layout_height="155dp"
-    android:layout_marginHorizontal="24dp"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/forecast_shape_background"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_height="@dimen/forecast_layout_height"
+    android:layout_marginHorizontal="@dimen/forecast_layout_marginHorizontal"
+    android:layout_marginTop="@dimen/forecast_layout_marginTop"
+    android:background="@drawable/forecast_shape_background">
 
     <TextView
         android:id="@+id/tv_today"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="@dimen/forecast_days_marginStart"
+        android:layout_marginTop="@dimen/forecast_days_marginTop"
         android:text="@string/tv_today"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/forecast_days_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,11 +24,11 @@
         android:id="@+id/tv_grade_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="@dimen/forecast_gradeMin_marginStart"
+        android:layout_marginTop="@dimen/forecast_gradeMin_marginTop"
         android:text="@string/tv_grade_min"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/forecast_gradeMin_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,11 +36,11 @@
         android:id="@+id/tv_grade_max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="254dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="@dimen/forecast_gradeMax_marginStart"
+        android:layout_marginTop="@dimen/forecast_gradeMax_marginTop"
         android:text="@string/tv_grade_max"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/forecast_gradeMax_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,11 +48,11 @@
         android:id="@+id/tv_precipitation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="@dimen/forecast_precipitation_marginStart"
+        android:layout_marginTop="@dimen/forecast_precipitation_marginTop"
         android:text="@string/tv_precip_num"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/forecast_precipitation_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,11 +60,11 @@
         android:id="@+id/tv_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="254dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="@dimen/forecast_speed_marginStart"
+        android:layout_marginTop="@dimen/forecast_speed_marginTop"
         android:text="@string/tv_kmh"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/forecast_speed_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,11 +72,11 @@
         android:id="@+id/tv_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginStart="@dimen/forecast_min_marginStart"
+        android:layout_marginTop="@dimen/forecast_min_marginTop"
         android:text="@string/tv_min"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/forecast_min_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,11 +84,11 @@
         android:id="@+id/tv_max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="254dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginStart="@dimen/forecast_max_marginStart"
+        android:layout_marginTop="@dimen/forecast_max_marginTop"
         android:text="@string/tv_max"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/forecast_max_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,11 +96,11 @@
         android:id="@+id/tv_precipitation_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginStart="@dimen/forecast_precipitationTxt_marginStart"
+        android:layout_marginTop="@dimen/forecast_precipitationTxt_marginTop"
         android:text="@string/tv_precip"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/forecast_precipitationTxt_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,11 +108,11 @@
         android:id="@+id/tv_wind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="117dp"
+        android:layout_marginStart="@dimen/forecast_windTxt_marginStart"
+        android:layout_marginTop="@dimen/forecast_windTxt_marginTop"
         android:text="@string/tv_wind"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/forecast_windTxt_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,11 +120,11 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="@dimen/forecast_date_marginStart"
+        android:layout_marginTop="@dimen/forecast_date_marginTop"
         android:text="@string/tv_date"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/forecast_date_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,8 +132,8 @@
         android:id="@+id/ic_cloudy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginStart="@dimen/forecast_icon_marginStart"
+        android:layout_marginTop="@dimen/forecast_icon_marginTop"
         android:contentDescription="@string/icon_holder"
         android:src="@drawable/ic_sun"
         app:layout_constraintStart_toStartOf="parent"

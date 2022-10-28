@@ -59,7 +59,6 @@ class HomeScrAdapter(private val newList: List<ForecastScreenItem>) :
                 (holder as TitleViewHolder).bind(currentItem)
             }
         }
-
     }
 
     override fun getItemCount(): Int = newList.size
@@ -104,7 +103,6 @@ class HomeScrAdapter(private val newList: List<ForecastScreenItem>) :
             val subtitle: TextView = itemView.findViewById(R.id.tv_subtitle)
             subtitle.text = currentItem.subTitle
         }
-
     }
 
     companion object {
