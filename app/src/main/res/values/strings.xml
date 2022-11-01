@@ -23,8 +23,24 @@
     <string name="icon_date">11</string>
     <!--  Fragment today strings  -->
     <string name="tv_today_fragment">Today Fragment</string>
-    <!--  Fragment today strings  -->
+    <!--  Fragment tomorrow strings  -->
     <string name="tv_tomorrow_fragment">Tomorrow Fragment</string>
+    <string name="uv_index">UV index</string>
+    <string name="precipitation">Precipitation</string>
+    <string name="precipitation_grade">12°</string>
+    <string name="date">1/10</string>
+    <string name="humidity">Humidity</string>
+    <string name="tom_hum_grade">80%</string>
+    <string name="wind_speed">NNE 1km/h</string>
+    <string name="tom_coverage">Coverage</string>
+    <string name="tom_rain">Rain</string>
+    <string name="coverage_percent">3%</string>
+    <string name="rain_mm">0mm</string>
+    <string name="tom_text_date">Tomorrow,\nMonday 11 September</string>
+    <string name="clear">Clear</string>
+    <string name="hour">00:00</string>
+    <string name="tom_grade">14°</string>
+    <string name="humidity_percent">80%</string>
 
 
 </resources>
