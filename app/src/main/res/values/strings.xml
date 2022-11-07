@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">meteoapp</string>
-    <!-- Home Fragment Frame -->
+    <!--    Title String   -->
     <string name="palermo_sic">Palermo, Sicilia</string>
+    <!--    Subtitle String  -->
+    <string name="next_five_days">Next 5 Days</string>
+    <!-- Forecast_item_Strings -->
     <string name="tv_today">Today</string>
     <string name="tv_grade_min">22\u00B0</string>
     <string name="tv_grade_max">31\u00B0</string>
@@ -11,48 +14,9 @@
     <string name="tv_precip">Precipitation</string>
     <string name="tv_wind">wind</string>
     <string name="tv_date">10\/09</string>
-    <string name="next_five_days">Next 5 Days</string>
     <string name="tv_precip_num">0%</string>
-    <!--  RecyclerView Tomorrow Strings  -->
-    <string name="rc_tv_tomorrow">Tomorrow</string>
-    <string name="rc_tv_grade_min_tom">25\u00B0</string>
-    <string name="rc_tv_grade_max_tom">33\u00B0</string>
-    <string name="rc_tv_kmh_tom">10kmh</string>
-    <string name="rc_tv_min_tom">min</string>
-    <string name="rc_tv_max_tom">max</string>
-    <string name="rc_tv_precip_tom">Precipitation</string>
-    <string name="rc_tv_wind_tom">wind</string>
-    <string name="rc_tv_date_tom">11\/09</string>
-    <string name="rc_tv_precip_num_tom">0%</string>
-    <!--  RecyclerView Monday Strings  -->
-    <string name="rc_tv_monday">Monday</string>
-    <string name="rc_tv_grade_min_mon">28\u00B0</string>
-    <string name="rc_tv_grade_max_mon">32\u00B0</string>
-    <string name="rc_tv_kmh_mon">12kmh</string>
-    <string name="rc_tv_date_mon">12\/09</string>
-    <string name="rc_tv_precip_num_mon">0%</string>
-    <!--  RecyclerView Tuesday Strings  -->
-    <string name="rc_tv_tuesday">Tuesday</string>
-    <string name="rc_tv_grade_min_tue">25\u00B0</string>
-    <string name="rc_tv_grade_max_tue">28\u00B0</string>
-    <string name="rc_tv_kmh_tue">09kmh</string>
-    <string name="rc_tv_date_tue">13\/09</string>
-    <string name="rc_tv_precip_num_tue">0%</string>
-    <!--  RecyclerView Wednesday Strings  -->
-    <string name="rc_tv_wednesday">Wednesday</string>
-    <string name="rc_tv_grade_min_wed">22\u00B0</string>
-    <string name="rc_tv_grade_max_wed">25\u00B0</string>
-    <string name="rc_tv_kmh_wed">20kmh</string>
-    <string name="rc_tv_date_wed">14\/09</string>
-    <string name="rc_tv_precip_num_wed">50%</string>
-    <!--  RecyclerView Thursday Strings  -->
-    <string name="rc_tv_thursday">Thursday</string>
-    <string name="rc_tv_grade_min_thu">23\u00B0</string>
-    <string name="rc_tv_grade_max_thu">27\u00B0</string>
-    <string name="rc_tv_kmh_thu">10kmh</string>
-    <string name="rc_tv_date_thu">15\/09</string>
-    <string name="rc_tv_precip_num_thu">20%</string>
-    <!--  Bottom_nav Strings -->
+    <string name="icon_holder">Icon Holder</string>
+    <!--  Bottom_nav_Strings -->
     <string name="icon_home">Home</string>
     <string name="icon_today">Today</string>
     <string name="icon_tomorrow">Tomorrow</string>
@@ -61,5 +25,6 @@
     <string name="tv_today_fragment">Today Fragment</string>
     <!--  Fragment today strings  -->
     <string name="tv_tomorrow_fragment">Tomorrow Fragment</string>
+
 
 </resources>
