@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="12:00"
+            android:textColor="#230EA5"
+            android:textSize="15sp"
+            />
+
+        <ImageView
+            android:id="@+id/sunny"
+            android:layout_width="24.61dp"
+            android:layout_height="24.42dp"
+            android:layout_marginStart="102.2dp" />
+        <TextView
+            android:id="@+id/temp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="168dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/temp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+
+            />
+
+        <ImageView
+            android:id="@+id/dropIcon"
+            android:layout_width="12.5dp"
+            android:layout_height="17.5dp"
+            android:layout_marginStart="252.75dp"
+            android:src="@drawable/ic_fluent_drop"
+
+
+            />
+        <TextView
+            android:id="@+id/humidity_degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="275dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/humidity"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+
+            />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

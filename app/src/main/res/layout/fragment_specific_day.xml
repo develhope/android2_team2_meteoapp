@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SpecificDayFragment">
+
+
+    <TextView
+        android:id="@+id/palermo_sic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/palermo_sic"
+        android:textColor="#230EA5"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/inter"
+        android:text="Martedi 10 September"
+        android:textColor="#230EA5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="153dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/inter"
+        android:text="Soleggiato"
+        android:textColor="#230EA5"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="37dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="194dp"
+        android:fontFamily="@font/inter"
+        android:text="11:00"
+        android:textColor="#230EA5"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sunny"
+        android:layout_width="24.61dp"
+        android:layout_height="24.42dp"
+        android:layout_marginStart="102.2dp"
+        android:layout_marginTop="190.76dp"
+        android:layout_marginEnd="263.2dp"
+        android:layout_marginBottom="628.82dp"
+        android:src="@drawable/ic_sun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/inter"
+        android:text="31°"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="12.5dp"
+        android:layout_height="17.5dp"
+        android:layout_marginStart="252.75dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="124.75dp"
+        android:layout_marginBottom="632.25dp"
+        android:src="@drawable/ic_fluent_drop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/humidity_degree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="275dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/inter"
+        android:text="0%"
+        android:textColor="@color/black"
+
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Specific_day_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="411dp"
+        android:layout_marginBottom="16dp"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/specific_day_list_item" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

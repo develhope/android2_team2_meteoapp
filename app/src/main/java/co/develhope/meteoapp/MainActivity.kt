@@ -3,10 +3,8 @@ package co.develhope.meteoapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import co.develhope.meteoapp.databinding.ActivityMainBinding
-import co.develhope.meteoapp.fragments.HomeFragment
-import co.develhope.meteoapp.fragments.TodayFragment
-import co.develhope.meteoapp.fragments.TomorrowFragment
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,13 +12,15 @@ class MainActivity : AppCompatActivity() {
     private val todayFragment = TodayFragment()
     private val tomorrowFragment = TomorrowFragment()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
         replaceFragment(HomeFragment())
+        val fragmentSpecificDayFragment=SpecificDayFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.home_fragment,fragmentSpecificDayFragment)
 
-        val bottomNav = binding.bottomNavigation
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home_fragment -> replaceFragment(homeFragment)
