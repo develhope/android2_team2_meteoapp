@@ -40,12 +40,14 @@
         <ImageView
             android:id="@+id/dropIcon"
             android:layout_width="12.5dp"
-            android:layout_height="17.5dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="252.75dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/ic_fluent_drop"
 
 
             />
+
         <TextView
             android:id="@+id/humidity_degree"
             android:layout_width="wrap_content"

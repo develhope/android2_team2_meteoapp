@@ -53,8 +53,8 @@ class SpecificDayFragment : Fragment() {
             R.drawable.ic_fluent_moon
         )
         hours = arrayOf("00:00", "01:00", "02:00", "03:00", "04:00", "05:00")
-        temprature = arrayOf("31°", "31°", "31°", "31°", "31°", "31°")
-        humidity = arrayOf("50%", "50%", "50%", "50%", "50%", "50%")
+        temprature = arrayOf("35°", "40°", "34°", "31°", "30°", "38°")
+        humidity = arrayOf("55%", "40%", "30%", "35%", "50%", "45%")
         for (i in hours.indices) {
             val arr = AllDatas(hours[i], temprature[i], humidity[i],icons[i])
             newArrayList.add(arr)
