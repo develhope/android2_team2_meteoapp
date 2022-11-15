@@ -16,8 +16,7 @@
             android:fontFamily="@font/inter"
             android:text="12:00"
             android:textColor="#230EA5"
-            android:textSize="15sp"
-            />
+            android:textSize="15sp" />
 
         <ImageView
             android:id="@+id/sunny"

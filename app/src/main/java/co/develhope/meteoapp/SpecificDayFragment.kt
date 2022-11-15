@@ -14,13 +14,16 @@ import androidx.recyclerview.widget.RecyclerView
 class SpecificDayFragment : Fragment() {
     private lateinit var adapter: Specific_Day_Adapter
     private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView2: RecyclerView
+    private lateinit var newArrayList2: ArrayList<Datas2>
     private lateinit var newArrayList: ArrayList<AllDatas>
 
     lateinit var icons: Array<Int>
     lateinit var hours: Array<String>
     lateinit var temprature: Array<String>
     lateinit var humidity: Array<String>
-
+    lateinit var smallRecyclerViewText1: Array<String>
+    lateinit var smallRecyclerViewText2: Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +41,7 @@ class SpecificDayFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
 
         dataInitialize()
+        dataInitialize2()
 
         recyclerView.adapter = Specific_Day_Adapter(newArrayList)
     }
@@ -59,6 +63,16 @@ class SpecificDayFragment : Fragment() {
             val arr = AllDatas(hours[i], temprature[i], humidity[i],icons[i])
             newArrayList.add(arr)
         }
+
+
+
+    }
+    private fun dataInitialize2(){
+        newArrayList2 = arrayListOf()
+        smallRecyclerViewText1= arrayOf(
+            "Percepita \n 45","Umidita \n 60%","Copertura \n 24%"
+        )
+        smallRecyclerViewText2= arrayOf("Indice UV \n 5/10" ,"Vento \n SSE 7km/h","Ploggia \n 0cm")
 
 
     }

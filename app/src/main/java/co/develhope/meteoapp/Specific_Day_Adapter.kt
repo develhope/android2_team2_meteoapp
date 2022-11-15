@@ -39,7 +39,7 @@ class Specific_Day_Adapter(private val dataList: ArrayList<AllDatas>
         val temp: TextView = itemView.findViewById(R.id.temp2)
         val iconSunny: ImageView = itemView.findViewById(R.id.sunny)
         val humidity: TextView = itemView.findViewById(R.id.humidity_degree)
-        val iconDrop: ImageView = itemView.findViewById(R.id.dropIcon)
+        //val iconDrop: ImageView = itemView.findViewById(R.id.dropIcon)
 
     }
 
