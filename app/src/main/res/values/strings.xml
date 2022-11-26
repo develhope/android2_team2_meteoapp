@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">meteoapp</string>
     <!--    Title String   -->
-    <string name="palermo_sic">Palermo, Sicilia</string>
+    <string name="specificDay_palermo_sic">%s, %s</string>
     <!--    Subtitle String  -->
     <string name="next_five_days">Next 5 Days</string>
     <!-- Forecast_item_Strings -->
@@ -12,7 +12,7 @@
     <string name="tv_min">min</string>
     <string name="tv_max">max</string>
     <string name="tv_precip">Precipitation</string>
-    <string name="tv_wind">wind</string>
+    <string name="specificDay_tv_wind">wind</string>
     <string name="tv_date">10\/09</string>
     <string name="tv_precip_num">0%</string>
     <string name="icon_holder">Icon Holder</string>
@@ -25,6 +25,31 @@
     <string name="tv_today_fragment">Today Fragment</string>
     <!--  Fragment today strings  -->
     <string name="tv_tomorrow_fragment">Tomorrow Fragment</string>
+    <string name="specificDay_hour_second">%d:00</string>
+    <string name="tom_grade">tom_grade</string>
+    <string name="specificDay_humidity">Humidity</string>
+    <string name="tom_hum_grade">tom_hum_grade</string>
+    <string name="specificDay_wind_speed">wind_speed</string>
+    <string name="tom_coverage">tom_coverage</string>
+    <string name="tom_rain">tom_rain</string>
+    <string name="specificDay_coverage_percent">coverage_percent</string>
+    <string name="specificDay_rain_mm">rain_mm</string>
+    <string name="specificDay_date">date</string>
+    <string name="specificDay_precipitation_grade">%d </string>
+    <string name="specificDay_uv_index">uv_index</string>
+    <string name="specificDay_precipitation">precipitation</string>
+    <string name="specificDay_humidity_percent">%d%%</string>
+    <string name="specificDay_description">%d/%d</string>
+    <string name="specificDay_situation">Sunny</string>
+    <string name="day_grade">%d\u00B0</string>
+    <string name="humidityDegree">0%</string>
+    <string name="degree">11</string>
+    <string name="specificDay_hum_grade">day_hum_grade</string>
+    <string name="specificDay_coverage">day_coverage</string>
+    <string name="specificDay_rain">day_rain</string>
+    <string name="specificDay_grade">grade</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

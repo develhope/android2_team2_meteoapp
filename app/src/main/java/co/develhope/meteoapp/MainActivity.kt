@@ -5,13 +5,14 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import co.develhope.meteoapp.databinding.ActivityMainBinding
 import co.develhope.meteoapp.fragments.HomeFragment
+import co.develhope.meteoapp.fragments.SpecificDayFragment
 import co.develhope.meteoapp.fragments.TodayFragment
 import co.develhope.meteoapp.fragments.TomorrowFragment
 
 class MainActivity : AppCompatActivity() {
 
     private val homeFragment = HomeFragment()
-    private val todayFragment = TodayFragment()
+    private val todayFragment = SpecificDayFragment()
     private val tomorrowFragment = TomorrowFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
