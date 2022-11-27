@@ -21,8 +21,6 @@ class SpecificDayAdapter(private val newList: List<DailyScreenItems>) :
 
         }
     }
-
-
     class SpecificDayTitleViewHolder(private val specificDayTitle: SpecificDayTitleBinding) :
         RecyclerView.ViewHolder(specificDayTitle.root) {
         fun bind(title: DailyScreenItems.Title) {

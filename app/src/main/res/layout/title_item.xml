@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:text="@string/specificDay_palermo_sic"
+        android:text="@string/palermo_sic"
         android:textColor="@color/white"
         android:textSize="@dimen/title_text_size"
         android:textStyle="bold"
