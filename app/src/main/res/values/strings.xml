@@ -65,4 +65,36 @@
     <string name="tom_grade">%d\u00B0</string>
     <string name="humidity_percent">%d%%</string>
 
+    <!--    today fragment string-->
+    <!--today header string-->
+    <string name="td_palermo_sic">%s ,%s</string>
+    <string name="td_text_date">Today</string>
+    <string name="td_Info">%s</string>
+    <!--    today view strings -->
+    <string name="td_hour">11:00</string>
+    <string name="td_icon_sun">td_icon_sun</string>
+    <string name="td_grade">31°</string>
+    <string name="td_icon_drop">td_icon_drop</string>
+    <string name="td_humidity_percent">0%</string>
+    <string name="precipitation_td">Felt</string>
+    <string name="td_uv_index">UV Index</string>
+    <string name="td_precipitation_grade">%d</string>
+    <string name="td_index">%s</string>
+    <string name="td_humidity">Humidity</string>
+    <string name="tv_td_wind">Wind</string>
+    <string name="td_hum_grade">%d</string>
+    <string name="wind_speed_td">SSE 7km/h</string>
+    <string name="td_coverage">Coverage</string>
+    <string name="td_rain">Rain</string>
+    <string name="coverage_percent_td">%d</string>
+    <string name="rain_mm_td">%d</string>
+    <!--    today hourly item-->
+    <string name="td2_hour">%d</string>
+    <string name="td2_icon_holder">sun</string>
+    <string name="td2_grade">%d</string>
+    <string name="td_icon_holder">td_icon_holder</string>
+    <string name="td2_humidity_percent">%d</string>
+
+
+
 </resources>
