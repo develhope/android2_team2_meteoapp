@@ -96,7 +96,7 @@ class TodayScreenAdopter(private val newList: List<TodayDataClass>) :
     }
 
     override fun getItemCount(): Int = newList.size
-    companion object objects
+    companion object
     {
         const val HEADER = 0
         const val CARD = 1
