@@ -8,8 +8,7 @@
     android:layout_marginTop="26dp"
     android:layout_marginBottom="28dp">
     <include
-
-        android:id="@+id/includ_layout"
+        android:id="@+id/include_layout"
         layout="@layout/day_hourly_item"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,11 +17,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="0dp"
-        android:background="#FFFFFF"
         android:elevation="10dp"
         android:paddingBottom="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/includ_layout">
+        app:layout_constraintTop_toBottomOf="@id/include_layout"
+        android:background="@drawable/tomorrow_screen_hf_bg">
+
         <TextView
             android:id="@+id/tv_day_precipitationTxt"
             android:layout_width="wrap_content"
@@ -64,13 +64,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/date_tv"
+
+            android:id="@+id/card_uv_index"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="198dp"
             android:layout_marginTop="37dp"
             android:fontFamily="@font/inter"
-            android:text="@string/specificDay_date"
+            android:text="@string/specificDay_uvIndex"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -108,7 +109,7 @@
             android:layout_marginStart="198dp"
             android:layout_marginTop="84dp"
             android:fontFamily="@font/inter"
-            android:text="@string/specificDay_tv_wind"
+            android:text="@string/specific_day_wind_speed"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -209,6 +210,4 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

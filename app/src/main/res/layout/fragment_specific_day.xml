@@ -4,10 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#FFFFFF"
     android:layout_height="match_parent"
-    tools:context=".fragments.SpecificDayFragment"
-    >
+    android:background="#FFFFFF"
+    tools:context=".fragments.SpecificDayFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Hourly_recycler_view"
@@ -16,8 +15,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/day_hourly_item"
-
-       />
-
+        tools:listitem="@layout/day_hourly_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

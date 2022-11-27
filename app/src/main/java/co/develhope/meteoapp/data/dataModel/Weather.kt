@@ -1,4 +1,4 @@
-package co.develhope.meteoapp.data.weekly
+package co.develhope.meteoapp.data.dataModel
 
 enum class Weather {
     SUNNY, CLOUDY, RAINY
@@ -6,7 +6,8 @@ enum class Weather {
 
 fun Int.toWeather(): Weather {
     return when (this) {
-        1 -> Weather.SUNNY
+        0,1 -> Weather.SUNNY
+        2,3 -> Weather.CLOUDY
         else -> Weather.RAINY
     }
 }

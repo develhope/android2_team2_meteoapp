@@ -12,8 +12,7 @@
     <string name="tv_kmh">%d km/h</string>
     <string name="tv_min">min</string>
     <string name="tv_max">max</string>
-    <string name="tv_precip">Precipitation</string>
-
+    <string name="tv_precip">Precip</string>
     <string name="tv_wind">wind</string>
     <string name="tv_date">%d/%d</string>
     <string name="tv_precip_num">%d%%</string>
@@ -27,31 +26,26 @@
     <string name="tv_today_fragment">Today Fragment</string>
     <!--  Fragment today strings  -->
     <string name="tv_tomorrow_fragment">Tomorrow Fragment</string>
-    <string name="specificDay_hour_second">%d:00</string>
-    <string name="tom_grade">tom_grade</string>
+    <!--  Specific day strings  -->
     <string name="specificDay_humidity">Humidity</string>
-    <string name="tom_hum_grade">tom_hum_grade</string>
-    <string name="specificDay_wind_speed">wind_speed</string>
-    <string name="tom_coverage">tom_coverage</string>
-    <string name="tom_rain">tom_rain</string>
-    <string name="specificDay_coverage_percent">coverage_percent</string>
-    <string name="specificDay_rain_mm">rain_mm</string>
-    <string name="specificDay_date">date</string>
+    <string name="specificDay_hour_second">%d:00</string>
+    <string name="specificDay_wind_speed">%d</string>
+    <string name="specificDay_coverage_percent">%d%%</string>
+    <string name="specificDay_rain_mm">%d mm</string>
+    <string name="specificDay_hourly_date">%d/%d</string>
     <string name="specificDay_precipitation_grade">%d </string>
-    <string name="specificDay_uv_index">uv_index</string>
+    <string name="specificDay_uv_index">UV index</string>
     <string name="specificDay_precipitation">precipitation</string>
-    <string name="specificDay_humidity_percent">%d%%</string>
-    <string name="specificDay_description">%d/%d</string>
-    <string name="specificDay_situation">Sunny</string>
-    <string name="day_grade">%d\u00B0</string>
+    <string name="specificDay_humidity_percent">%d</string>
+    <string name="specificDay_date">%d / %d / %d</string>
+    <string name="specificDay_situation">%s</string>
+    <string name="SpecificDay_grade">%d\u00B0</string>
     <string name="humidityDegree">0%</string>
     <string name="degree">11</string>
-    <string name="specificDay_hum_grade">day_hum_grade</string>
-    <string name="specificDay_coverage">day_coverage</string>
-    <string name="specificDay_rain">day_rain</string>
-    <string name="specificDay_grade">grade</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="specificDay_hum_grade">%d</string>
+    <string name="specificDay_coverage">Coverage</string>
+    <string name="specificDay_rain">Rain</string>
+    <string name="specific_day_wind_speed">Wind</string>
+    <string name="specificDay_uvIndex">%d</string>
 
 </resources>

@@ -3,100 +3,111 @@ package co.develhope.meteoapp.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import co.develhope.meteoapp.ForecastScreenItem
 import co.develhope.meteoapp.R
-import co.develhope.meteoapp.data.TotalDataClass
-import co.develhope.meteoapp.data.TotalDataClass.*
+import co.develhope.meteoapp.data.ForecastModel
+import co.develhope.meteoapp.data.dataModel.DailyScreenItems
 import co.develhope.meteoapp.databinding.DayHourlyItemBinding
 import co.develhope.meteoapp.databinding.SpecificDayCardViewBinding
 import co.develhope.meteoapp.databinding.SpecificDayTitleBinding
 
-class SpecificDayAdapter(private val newList: List<TotalDataClass>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SpecificDayAdapter(private val newList: List<DailyScreenItems>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
         return when (newList[position]) {
-            is TotalDataClass.SpecificDayCard -> SpecificDayAdapter.CARD
-            is TotalDataClass.SpecificDayHourly -> SpecificDayAdapter.HOURLY
-            is TotalDataClass.SpecificDayTitle1-> SpecificDayAdapter.TITLE
+            is DailyScreenItems.CardForecast -> HOURLY_CARD
+            is DailyScreenItems.HourlyForecast -> HOURLY_HOURLY
+            is DailyScreenItems.Title -> HOURLY_TITLE
+
         }
     }
 
 
-    class SpecificDayTitleViewHolder(private val specificDayTitle:SpecificDayTitleBinding): RecyclerView.ViewHolder(specificDayTitle.root){
-      fun bind(title: SpecificDayTitle1){
-           specificDayTitle.dayTitle.text=itemView.context.getString(R.string.specificDay_palermo_sic,title.region,title.city)
-           //specificDayTitle.dayDescriptionTxt.text=itemView.context.getString(R.string.which_day_and_date,title.dayInfo)
-          //should try the OffsetTimesolution for above problem
-       }
+    class SpecificDayTitleViewHolder(private val specificDayTitle: SpecificDayTitleBinding) :
+        RecyclerView.ViewHolder(specificDayTitle.root) {
+        fun bind(title: DailyScreenItems.Title) {
+            specificDayTitle.dayTitle.text = itemView.context.getString(
+                R.string.palermo_sic,
+                title.city,
+                title.region
+            )
+            specificDayTitle.dayDescriptionTxt.text = itemView.context.getString(
+                R.string.specificDay_date,
+                title.date.dayOfMonth,
+                title.date.monthValue,
+                title.date.year
+            )
+        }
     }
-    class SpecificDayCardViewHolder(private val specificDayCard:SpecificDayCardViewBinding):RecyclerView.ViewHolder(specificDayCard.root){
-        fun bind(title: SpecificDayCard){
-            specificDayCard.tvDayPrecipitationGrade.text=itemView.context.getString(R.string.specificDay_precipitation_grade,title.feelsLike)
-            //,title.windSpeed,title.humidity,title.uVIndex,title.cloudCover,title.rainAmount
-       }
-   }
-    class SpecificDayHourlyViewHolder(private val specificDayHourly:DayHourlyItemBinding): RecyclerView.ViewHolder(specificDayHourly.root){
-        fun bind(title: SpecificDayHourly){
-            specificDayHourly.dayHour2.text=itemView.context.getString(R.string.specificDay_hour_second,title.date.hour)
-           // specificDayHourly.dayIconMoon.setImageResource()
-            //specificDayHourly.dayIconMoon
-            specificDayHourly.dayGrade.text=itemView.context.getString(R.string.day_grade,title.temp)
-            specificDayHourly.dayHumidityPercent.text=itemView.context.getString(R.string.specificDay_precipitation_grade,title.pericip)
+
+    class SpecificDayCardViewHolder(private val specificDayCard: SpecificDayCardViewBinding) :
+        RecyclerView.ViewHolder(specificDayCard.root) {
+        fun bind(cardItems: DailyScreenItems.CardForecast) {
+            specificDayCard.tvDayPrecipitationGrade.text = itemView.context.getString(
+                R.string.specificDay_precipitation_grade, cardItems.cardForecast.precip)
+            specificDayCard.cardUvIndex.text = itemView.context.getString(
+                R.string.specificDay_uvIndex, cardItems.cardForecast.index)
+            specificDayCard.dayHumidityGrade.text = itemView.context.getString(
+                R.string.specificDay_hum_grade,cardItems.cardForecast.humidity)
+            specificDayCard.dayWindSpeed.text = itemView.context.getString(
+                R.string.specificDay_wind_speed, cardItems.cardForecast.wind)
+            specificDayCard.dayCoveragePer.text = itemView.context.getString(
+                R.string.specificDay_coverage_percent, cardItems.cardForecast.coverage)
+            specificDayCard.dayRainPer.text = itemView.context.getString(
+                R.string.specificDay_rain_mm, cardItems.cardForecast.rainfall
+            )
+        }
+    }
+
+    class SpecificDayHourlyViewHolder(private val specificHourly: DayHourlyItemBinding) :
+        RecyclerView.ViewHolder(specificHourly.root) {
+        fun bind(hourlyItems: DailyScreenItems.HourlyForecast) {
+            specificHourly.dayHour2.text = itemView.context.getString(
+                R.string.specificDay_hour_second,hourlyItems.hourlyForecast.date.hour)
+            specificHourly.dayIconMoon.setImageResource(
+                ForecastModel.setIcon(hourlyItems.hourlyForecast.weather))
+            specificHourly.dayGrade.text = itemView.context.getString(
+                R.string.SpecificDay_grade, hourlyItems.hourlyForecast.temperature)
+            specificHourly.dayHumidityPercent.text = itemView.context.getString(R.string.specificDay_humidity_percent,
+            hourlyItems.hourlyForecast.rainfall)
 
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            TITLE -> {
-                SpecificDayTitleViewHolder(
-                    SpecificDayTitleBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
-          CARD-> {SpecificDayCardViewHolder(
-              SpecificDayCardViewBinding.inflate(LayoutInflater.from(parent.context),parent,false) )
-          }
-          HOURLY-> {SpecificDayHourlyViewHolder(
-               DayHourlyItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
 
-                   )}
-           else -> {
-                val itemView = LayoutInflater.from(parent.context)
-                   .inflate(R.layout.forecast_item, parent, false)
-               HomeScrAdapter.ForecastViewHolder(itemView)
-           }
+            HOURLY_TITLE -> SpecificDayTitleViewHolder (
+                    SpecificDayTitleBinding.inflate(
+                        LayoutInflater.from(parent.context), parent, false))
+            HOURLY_CARD -> SpecificDayCardViewHolder (
+                    SpecificDayCardViewBinding.inflate(
+                        LayoutInflater.from(parent.context), parent, false))
+
+            HOURLY_HOURLY -> SpecificDayHourlyViewHolder (
+                    DayHourlyItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+                )
+
+            else -> throw java.lang.IllegalArgumentException("Invalid view")
+
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-       when (val currentItem = newList[position]) {
-            is SpecificDayTitle1 -> {
-                (holder as SpecificDayTitleViewHolder).bind(currentItem)
-            }
-            is SpecificDayCard -> {
-               (holder as SpecificDayCardViewHolder).bind(currentItem)
-            }
-            is SpecificDayHourly -> {
-              (holder as SpecificDayHourlyViewHolder).bind(currentItem)
-           }
-            else -> {}
-       }
+        when (holder) {
+            is SpecificDayTitleViewHolder -> holder.bind(newList[position] as DailyScreenItems.Title)
+            is SpecificDayCardViewHolder -> holder.bind(newList[position] as DailyScreenItems.CardForecast)
+            is SpecificDayHourlyViewHolder -> holder.bind(newList[position] as DailyScreenItems.HourlyForecast)
+        }
     }
 
 
-   override fun getItemCount(): Int = newList.size
-    companion object objects {
+    override fun getItemCount(): Int = newList.size
 
-        const val TITLE= 0
-
-        const val CARD= 1
-
-        const val HOURLY = 2
+    companion object {
+        const val HOURLY_TITLE = 0
+        const val HOURLY_CARD = 1
+        const val HOURLY_HOURLY = 2
     }
-
-
 }

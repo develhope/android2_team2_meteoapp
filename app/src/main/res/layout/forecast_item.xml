@@ -17,6 +17,7 @@
         android:text="@string/tv_today"
         android:textColor="@color/white"
         android:textSize="@dimen/forecast_days_textSize"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +29,8 @@
         android:layout_marginTop="@dimen/forecast_gradeMin_marginTop"
         android:text="@string/tv_grade_min"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_gradeMin_textSize"
+        android:textSize="@dimen/big_textSize"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +42,8 @@
         android:layout_marginTop="@dimen/forecast_gradeMax_marginTop"
         android:text="@string/tv_grade_max"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_gradeMax_textSize"
+        android:textSize="@dimen/big_textSize"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,7 +55,8 @@
         android:layout_marginTop="@dimen/forecast_precipitation_marginTop"
         android:text="@string/tv_precip_num"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_precipitation_textSize"
+        android:textSize="@dimen/big_textSize"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +68,8 @@
         android:layout_marginTop="@dimen/forecast_speed_marginTop"
         android:text="@string/tv_kmh"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_speed_textSize"
+        android:textSize="@dimen/big_textSize"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,7 +81,8 @@
         android:layout_marginTop="@dimen/forecast_min_marginTop"
         android:text="@string/tv_min"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_min_textSize"
+        android:textSize="@dimen/small_textSize"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,7 +94,7 @@
         android:layout_marginTop="@dimen/forecast_max_marginTop"
         android:text="@string/tv_max"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_max_textSize"
+        android:textSize="@dimen/small_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,7 +106,7 @@
         android:layout_marginTop="@dimen/forecast_precipitationTxt_marginTop"
         android:text="@string/tv_precip"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_precipitationTxt_textSize"
+        android:textSize="@dimen/small_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,7 +118,7 @@
         android:layout_marginTop="@dimen/forecast_windTxt_marginTop"
         android:text="@string/specificDay_tv_wind"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_windTxt_textSize"
+        android:textSize="@dimen/small_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,7 +130,7 @@
         android:layout_marginTop="@dimen/forecast_date_marginTop"
         android:text="@string/tv_date"
         android:textColor="@color/white"
-        android:textSize="@dimen/forecast_date_textSize"
+        android:textSize="@dimen/small_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
