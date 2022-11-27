@@ -47,5 +47,22 @@
     <string name="specificDay_rain">Rain</string>
     <string name="specific_day_wind_speed">Wind</string>
     <string name="specificDay_uvIndex">%d</string>
+    <!--  Fragment tomorrow strings  -->
+    <string name="uv_index">%d</string>
+    <string name="precipitation">Precipitation</string>
+    <string name="precipitation_grade">%d</string>
+    <string name="date">1/10</string>
+    <string name="humidity">Humidity</string>
+    <string name="tom_hum_grade">%d</string>
+    <string name="wind_speed">NNE %d km/h</string>
+    <string name="tom_coverage">Coverage</string>
+    <string name="tom_rain">Rain</string>
+    <string name="coverage_percent">%d</string>
+    <string name="rain_mm">%d mm</string>
+    <string name="tom_text_date">Tomorrow,\nMonday 11 September</string>
+    <string name="clear">Clear</string>
+    <string name="hour">%d:00</string>
+    <string name="tom_grade">%d\u00B0</string>
+    <string name="humidity_percent">%d%%</string>
 
 </resources>

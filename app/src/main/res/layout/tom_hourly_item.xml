@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hourlyItemDown"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <TextView
+        android:id="@+id/tom2_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="19dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/hour"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/tom2_icon_moon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="117.9dp"
+        android:layout_marginTop="16.84dp"
+        android:contentDescription="@string/icon_holder"
+        android:src="@drawable/ic_fluent_moon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tom2_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41.2dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/tom_grade"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tom2_icon_moon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/tom2_icon_drop"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+
+        android:layout_marginTop="24.25dp"
+        android:layout_marginEnd="115.75dp"
+        android:contentDescription="@string/icon_holder"
+        android:src="@drawable/ic_fluent_drop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tom2_humidity_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9.75dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/humidity_percent"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tom2_icon_drop"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="20dp"
+        android:background="#ABA4FF"
+        app:layout_constraintTop_toBottomOf="@id/tom2_grade" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

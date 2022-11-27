@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginTop="26dp"
+    android:layout_marginBottom="28dp">
+
+
+
+    <TextView
+        android:id="@+id/tom_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/hour"
+        android:textColor="#230EA5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/tom_icon_moon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/icon_holder"
+        android:src="@drawable/ic_fluent_moon"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"
+        app:layout_constraintStart_toEndOf="@+id/tom_hour" />
+
+    <TextView
+        android:id="@+id/tom_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="23dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/tom_grade"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"
+        app:layout_constraintStart_toEndOf="@+id/tom_icon_moon" />
+
+    <ImageView
+        android:id="@+id/tom_icon_drop"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="51.75dp"
+        android:layout_marginBottom="26.25dp"
+        android:contentDescription="@string/icon_holder"
+        android:src="@drawable/ic_fluent_drop"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"
+        app:layout_constraintStart_toEndOf="@+id/tom_grade" />
+
+    <TextView
+        android:id="@+id/tom_humidity_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9.75dp"
+        android:layout_marginBottom="23dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/humidity_percent"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"
+        app:layout_constraintStart_toEndOf="@+id/tom_icon_drop" />
+
+    <ImageView
+        android:id="@+id/tom_icon_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="26.25dp"
+        android:contentDescription="@string/icon_holder"
+        android:src="@drawable/akar_icons_chevron_up"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"
+        app:layout_constraintStart_toEndOf="@+id/tom_humidity_percent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hourlyForecast_item"
+        android:layout_width="match_parent"
+        android:layout_height="213dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/tomorrow_screen_hf_bg"
+        android:elevation="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tom_hour">
+
+        <TextView
+            android:id="@+id/tv_tom_precipitationTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/precipitation"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_tom_uv_indexTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="198dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/uv_index"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_tom_precipitation_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="37dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/precipitation_grade"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="198dp"
+            android:layout_marginTop="37dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="18.5dp"
+            android:background="#ABA4FF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="84dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/humidity"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="198dp"
+            android:layout_marginTop="84dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_wind"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_humidity_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="106dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tom_hum_grade"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_wind_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="198dp"
+            android:layout_marginTop="106dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/wind_speed"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="18.5dp"
+            android:layout_marginBottom="69dp"
+            android:background="#ABA4FF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_coverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="153dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tom_coverage"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_rain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="198dp"
+            android:layout_marginTop="153dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tom_rain"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_coverage_per"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="175dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/coverage_percent"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tom_rain_per"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="198dp"
+            android:layout_marginTop="175dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/rain_mm"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
