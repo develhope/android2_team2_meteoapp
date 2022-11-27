@@ -29,6 +29,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf= "@id/situation_txt" />
+
     <TextView
         android:id="@+id/situation_txt"
         android:layout_width="wrap_content"
@@ -40,6 +41,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/day_title" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

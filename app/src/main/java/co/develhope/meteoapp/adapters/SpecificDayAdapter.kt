@@ -18,6 +18,7 @@ class SpecificDayAdapter(private val newList: List<DailyScreenItems>) :
             is DailyScreenItems.CardForecast -> HOURLY_CARD
             is DailyScreenItems.HourlyForecast -> HOURLY_HOURLY
             is DailyScreenItems.Title -> HOURLY_TITLE
+
         }
     }
 
@@ -55,7 +56,6 @@ class SpecificDayAdapter(private val newList: List<DailyScreenItems>) :
             specificDayCard.dayRainPer.text = itemView.context.getString(
                 R.string.specificDay_rain_mm, cardItems.cardForecast.rainfall
             )
-
         }
     }
 
@@ -76,6 +76,7 @@ class SpecificDayAdapter(private val newList: List<DailyScreenItems>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
+
             HOURLY_TITLE -> SpecificDayTitleViewHolder (
                     SpecificDayTitleBinding.inflate(
                         LayoutInflater.from(parent.context), parent, false))
