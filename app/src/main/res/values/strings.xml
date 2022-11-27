@@ -1,20 +1,22 @@
 <resources>
     <string name="app_name">meteoapp</string>
     <!--    Title String   -->
-    <string name="specificDay_palermo_sic">%s, %s</string>
+    <string name="palermo_sic">%s, %s</string>
+
     <!--    Subtitle String  -->
-    <string name="next_five_days">Next 5 Days</string>
+    <string name="next_five_days">%s</string>
     <!-- Forecast_item_Strings -->
     <string name="tv_today">Today</string>
-    <string name="tv_grade_min">22\u00B0</string>
-    <string name="tv_grade_max">31\u00B0</string>
-    <string name="tv_kmh">12kmh</string>
+    <string name="tv_grade_min">%d\u00B0</string>
+    <string name="tv_grade_max">%d\u00B0</string>
+    <string name="tv_kmh">%d km/h</string>
     <string name="tv_min">min</string>
     <string name="tv_max">max</string>
     <string name="tv_precip">Precipitation</string>
-    <string name="specificDay_tv_wind">wind</string>
-    <string name="tv_date">10\/09</string>
-    <string name="tv_precip_num">0%</string>
+
+    <string name="tv_wind">wind</string>
+    <string name="tv_date">%d/%d</string>
+    <string name="tv_precip_num">%d%%</string>
     <string name="icon_holder">Icon Holder</string>
     <!--  Bottom_nav_Strings -->
     <string name="icon_home">Home</string>

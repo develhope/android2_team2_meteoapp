@@ -1,13 +1,14 @@
 package co.develhope.meteoapp.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import co.develhope.meteoapp.ForecastScreenItem
 import co.develhope.meteoapp.R
+import co.develhope.meteoapp.data.ForecastModel
+import co.develhope.meteoapp.data.weekly.ForecastScreenItem
+import co.develhope.meteoapp.databinding.ForecastItemBinding
+import co.develhope.meteoapp.databinding.SubtitleItemBinding
+import co.develhope.meteoapp.databinding.TitleItemBinding
 
 class HomeScrAdapter(private val newList: List<ForecastScreenItem>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -22,86 +23,67 @@ class HomeScrAdapter(private val newList: List<ForecastScreenItem>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            CARD -> {
-                val itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.forecast_item, parent, false)
-                ForecastViewHolder(itemView)
-            }
-            SUBTITLE -> {
-                val itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.subtitle_item, parent, false)
-                SubTitleViewHolder(itemView)
-            }
-
-            TITLE -> {
-                val itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.title_item, parent, false)
-                TitleViewHolder(itemView)
-            }
-
-            else -> {
-                val itemView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.forecast_item, parent, false)
-                ForecastViewHolder(itemView)
-            }
+            TITLE -> TitleViewHolder(
+                TitleItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            )
+            CARD -> ForecastViewHolder(
+                ForecastItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            )
+            SUBTITLE -> SubTitleViewHolder(
+                SubtitleItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            )
+            else -> throw java.lang.IllegalArgumentException("Invalid View Type")
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when (val currentItem = newList[position]) {
-            is ForecastScreenItem.Forecast -> {
-                (holder as ForecastViewHolder).bind(currentItem)
-            }
-            is ForecastScreenItem.Subtitle -> {
-                (holder as SubTitleViewHolder).bind(currentItem)
-            }
-            is ForecastScreenItem.Title -> {
-                (holder as TitleViewHolder).bind(currentItem)
-            }
+        when (holder) {
+            is TitleViewHolder -> holder.bind(newList[position] as ForecastScreenItem.Title)
+            is ForecastViewHolder -> holder.bind(newList[position] as ForecastScreenItem.Forecast)
+            is SubTitleViewHolder -> holder.bind(newList[position] as ForecastScreenItem.Subtitle)
         }
     }
 
     override fun getItemCount(): Int = newList.size
 
-    class ForecastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(currentItem: ForecastScreenItem.Forecast) {
-            val icon: ImageView = itemView.findViewById(R.id.ic_cloudy)
-            val tvDays: TextView = itemView.findViewById(R.id.tv_today)
-            val gradeMin: TextView = itemView.findViewById(R.id.tv_grade_min)
-            val gradeMax: TextView = itemView.findViewById(R.id.tv_grade_max)
-            val precipitation: TextView = itemView.findViewById(R.id.tv_precipitation)
-            val wind: TextView = itemView.findViewById(R.id.tv_wind)
-            val date: TextView = itemView.findViewById(R.id.tv_date)
-            val minTxt: TextView = itemView.findViewById(R.id.tv_min)
-            val maxTxt: TextView = itemView.findViewById(R.id.tv_max)
-            val windTxt: TextView = itemView.findViewById(R.id.tv_speed)
-            val precipitationTxt: TextView = itemView.findViewById(R.id.tv_precipitation_text)
+    class ForecastViewHolder(private val binding: ForecastItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-            icon.setImageResource(currentItem.summaryForecast.icon)
-            tvDays.text = currentItem.summaryForecast.days
-            gradeMin.text = currentItem.summaryForecast.minTemp
-            gradeMax.text = currentItem.summaryForecast.maxTemp
-            precipitation.text = currentItem.summaryForecast.precipitation
-            wind.text = currentItem.summaryForecast.wind
-            date.text = currentItem.summaryForecast.date
-            minTxt.text = currentItem.summaryForecast.minTxt
-            maxTxt.text = currentItem.summaryForecast.maxTxt
-            windTxt.text = currentItem.summaryForecast.windTxt
-            precipitationTxt.text = currentItem.summaryForecast.precipitationTxt
+        fun bind(forecastItem: ForecastScreenItem.Forecast) {
+
+            binding.tvDate.text = itemView.context.getString(R.string.tv_date,
+                forecastItem.weeklyCard.date.dayOfMonth,
+                forecastItem.weeklyCard.date.monthValue)
+            binding.tvGradeMax.text = itemView.context.getString(R.string.tv_grade_max,
+                forecastItem.weeklyCard.maxTemp)
+            binding.tvGradeMin.text = itemView.context.getString(R.string.tv_grade_min,
+                forecastItem.weeklyCard.minTemp)
+            binding.tvPrecipitation.text = itemView.context.getString(R.string.tv_precip_num,
+                forecastItem.weeklyCard.precipitation)
+            binding.tvSpeed.text = itemView.context.getString(R.string.tv_kmh,
+                forecastItem.weeklyCard.wind)
+            binding.tvToday.text = ForecastModel.setDayOfWeek(forecastItem.weeklyCard.date.dayOfWeek.name)
+            binding.icCloudy.setImageResource(ForecastModel.setIcon(forecastItem.weeklyCard.weather))
+
         }
     }
 
-    class TitleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(currentItem: ForecastScreenItem.Title) {
-            val title: TextView = itemView.findViewById(R.id.title_tv)
-            title.text = currentItem.title
+    class TitleViewHolder(private val binding: TitleItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(titleItem: ForecastScreenItem.Title) {
+            binding.titleTv.text = itemView.context.getString(
+                R.string.palermo_sic,
+                titleItem.city,
+                titleItem.region
+            )
         }
     }
 
-    class SubTitleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(currentItem: ForecastScreenItem.Subtitle) {
-            val subtitle: TextView = itemView.findViewById(R.id.tv_subtitle)
-            subtitle.text = currentItem.subTitle
+    class SubTitleViewHolder(private val binding: SubtitleItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(subtitleItem: ForecastScreenItem.Subtitle) {
+            binding.tvSubtitle.text = itemView.context.getString(
+                R.string.next_five_days,
+                subtitleItem.subTitle
+            )
         }
     }
 

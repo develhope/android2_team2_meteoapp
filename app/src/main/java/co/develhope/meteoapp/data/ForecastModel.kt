@@ -1,115 +1,28 @@
 package co.develhope.meteoapp.data
 
-import co.develhope.meteoapp.SummaryForecast
-import co.develhope.meteoapp.ForecastScreenItem
+import co.develhope.meteoapp.R
+import co.develhope.meteoapp.data.weekly.Weather
 
 object ForecastModel {
-    fun getForecastItems(): ArrayList<ForecastScreenItem> {
-        val list = ArrayList<ForecastScreenItem>()
-        list.add(ForecastScreenItem.Title("Palermo, Sicilia"))
-        list.add(
-            ForecastScreenItem.Forecast(
-                SummaryForecast(
-                    minTemp = "",
-                    maxTemp = "",
-                    precipitation = "",
-                    wind = "",
-                    icon = 0,
-                    days = "",
-                    date = "",
-                    minTxt = "",
-                    maxTxt = "",
-                    windTxt = "",
-                    precipitationTxt = ""
-                )
-            )
-        )
-        list.add(ForecastScreenItem.Subtitle("Next 5 days"))
-        list.add(
-            ForecastScreenItem.Forecast(
-                SummaryForecast(
-                    minTemp = "",
-                    maxTemp = "",
-                    precipitation = "",
-                    wind = "",
-                    icon = 0,
-                    days = "",
-                    date = "",
-                    minTxt = "",
-                    maxTxt = "",
-                    windTxt = "",
-                    precipitationTxt = ""
-                )
-            )
-        )
-        list.add(
-            ForecastScreenItem.Forecast(
-                SummaryForecast(
-                    minTemp = "",
-                    maxTemp = "",
-                    precipitation = "",
-                    wind = "",
-                    icon = 0,
-                    days = "",
-                    date = "",
-                    minTxt = "",
-                    maxTxt = "",
-                    windTxt = "",
-                    precipitationTxt = ""
-                )
-            )
-        )
-        list.add(
-            ForecastScreenItem.Forecast(
-                SummaryForecast(
-                    minTemp = "",
-                    maxTemp = "",
-                    precipitation = "",
-                    wind = "",
-                    icon = 0,
-                    days = "",
-                    date = "",
-                    minTxt = "",
-                    maxTxt = "",
-                    windTxt = "",
-                    precipitationTxt = ""
-                )
-            )
-        )
-        list.add(
-            ForecastScreenItem.Forecast(
-                SummaryForecast(
-                    minTemp = "",
-                    maxTemp = "",
-                    precipitation = "",
-                    wind = "",
-                    icon = 0,
-                    days = "",
-                    date = "",
-                    minTxt = "",
-                    maxTxt = "",
-                    windTxt = "",
-                    precipitationTxt = ""
-                )
-            )
-        )
-        list.add(
-            ForecastScreenItem.Forecast(
-                SummaryForecast(
-                    minTemp = "",
-                    maxTemp = "",
-                    precipitation = "",
-                    wind = "",
-                    icon = 0,
-                    days = "",
-                    date = "",
-                    minTxt = "",
-                    maxTxt = "",
-                    windTxt = "",
-                    precipitationTxt = ""
-                )
-            )
-        )
-        return list
+
+    fun setIcon(weather: Weather): Int {
+        return when (weather){
+            Weather.SUNNY -> R.drawable.ic_sun
+            Weather.RAINY -> R.drawable.ic_raining
+            Weather.CLOUDY -> R.drawable.ic_sun_cloud
+        }
+    }
+
+    fun setDayOfWeek(dayOfWeek: String): String {
+        return when (dayOfWeek) {
+            "MONDAY" -> "Monday"
+            "TUESDAY" -> "Tuesday"
+            "WEDNESDAY" -> "Wednesday"
+            "THURSDAY" -> "Thursday"
+            "FRIDAY" -> "Friday"
+            "SATURDAY" -> "Saturday"
+            "SUNDAY" -> "Sunday"
+            else -> "Unknown"
+        }
     }
 }
