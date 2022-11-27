@@ -42,7 +42,7 @@
     <dimen name="forecast_precipitationTxt_marginStart">152dp</dimen>
     <!--  tv wind text  -->
     <dimen name="forecast_windTxt_marginTop">117dp</dimen>
-    <dimen name="forecast_windTxt_marginStart">256dp</dimen>
+    <dimen name="forecast_windTxt_marginStart">254dp</dimen>
     <!--  tv date  -->
     <dimen name="forecast_date_marginTop">50dp</dimen>
     <dimen name="forecast_date_marginStart">20dp</dimen>

@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import co.develhope.meteoapp.databinding.ActivityMainBinding
 import co.develhope.meteoapp.fragments.HomeFragment
 import co.develhope.meteoapp.fragments.SpecificDayFragment
-import co.develhope.meteoapp.fragments.TodayFragment
 import co.develhope.meteoapp.fragments.TomorrowFragment
 
 class MainActivity : AppCompatActivity() {

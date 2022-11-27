@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/forecast_windTxt_marginStart"
         android:layout_marginTop="@dimen/forecast_windTxt_marginTop"
-        android:text="@string/specificDay_tv_wind"
+        android:text="@string/tv_wind"
         android:textColor="@color/white"
         android:textSize="@dimen/small_textSize"
         app:layout_constraintStart_toStartOf="parent"
