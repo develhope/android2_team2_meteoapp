@@ -1,16 +1,19 @@
 package co.develhope.meteoapp.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.develhope.meteoapp.adapters.HomeScrAdapter
-import co.develhope.meteoapp.data.ForecastModel
-import co.develhope.meteoapp.data.weekly.ForecastScreenItem
-import co.develhope.meteoapp.data.weekly.WeeklyCard
+import co.develhope.meteoapp.data.dataModel.ForecastScreenItem
+import co.develhope.meteoapp.data.dataModel.WeeklyCard
 import co.develhope.meteoapp.databinding.FragmentHomeBinding
+import co.develhope.meteoapp.network.RetrofitInstance
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -24,6 +27,18 @@ class HomeFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        lifecycleScope.launch {
+            try {
+                val homeScr = RetrofitInstance.getForecastSummary()
+                initRecyclerView(homeScr)
+                Log.d("HomeScreen Log", "Weekly: $homeScr")
+                Log.d("HomeScreen Log", "Hourly:${RetrofitInstance.getHourlySpecificDay()}")
+            }catch (e:Exception){
+                e.printStackTrace()
+                Log.d("HomeScreen Log", e.toString())
+            }
+        }
     }
 
     private fun initRecyclerView(itemsList: List<WeeklyCard>) {

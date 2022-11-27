@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.develhope.meteoapp.R
 import co.develhope.meteoapp.data.ForecastModel
-import co.develhope.meteoapp.data.weekly.ForecastScreenItem
+import co.develhope.meteoapp.data.dataModel.ForecastScreenItem
 import co.develhope.meteoapp.databinding.ForecastItemBinding
 import co.develhope.meteoapp.databinding.SubtitleItemBinding
 import co.develhope.meteoapp.databinding.TitleItemBinding

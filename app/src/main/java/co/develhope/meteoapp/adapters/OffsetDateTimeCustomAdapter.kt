@@ -4,6 +4,7 @@ import android.util.Log
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
+import com.google.gson.JsonParseException
 import com.google.gson.JsonPrimitive
 import com.google.gson.JsonSerializationContext
 import com.google.gson.JsonSerializer
@@ -19,6 +20,7 @@ class OffsetDateTimeCustomAdapter : JsonSerializer<OffsetDateTime>, JsonDeserial
         src: OffsetDateTime?, typeOfSrc: Type?, context: JsonSerializationContext?): JsonElement {
         return JsonPrimitive(dateTimeFormatter.format(src)) }
 
+    @Throws(JsonParseException::class)
     override fun deserialize(
         json: JsonElement?, typeOfT: Type?, context: JsonDeserializationContext?
     ): OffsetDateTime {

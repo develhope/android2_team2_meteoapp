@@ -15,4 +15,6 @@
         android:id="@+id/tomorrow_fragment"
         android:icon="@drawable/ic_day"
         android:title="@string/icon_tomorrow"/>
+
+
 </menu>
