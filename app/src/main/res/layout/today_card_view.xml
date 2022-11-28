@@ -11,74 +11,7 @@
 
     <include
         android:id="@+id/includ_layout"
-        layout="@layout/today_hourly_item"/>
-
-
-
-
-<!--    <TextView-->
-<!--        android:id="@+id/today_hour"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="22dp"-->
-<!--        android:fontFamily="@font/inter"-->
-<!--        android:text="@string/td_hour"-->
-<!--        android:textColor="#230EA5"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/td_icon_sun"-->
-<!--        android:layout_width="32dp"-->
-<!--        android:layout_height="32dp"-->
-<!--        android:layout_marginStart="45dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        android:contentDescription="@string/td_icon_holder"-->
-<!--        android:src="@drawable/ic_sun"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/today_hour" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/td_grade"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="40dp"-->
-<!--        android:layout_marginBottom="23dp"-->
-<!--        android:fontFamily="@font/inter"-->
-<!--        android:text="@string/td_grade"-->
-<!--        android:textColor="@color/black_light"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/td_icon_sun" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/td_icon_drop"-->
-<!--        android:layout_width="20dp"-->
-<!--        android:layout_height="20dp"-->
-<!--        android:layout_marginStart="51.75dp"-->
-<!--        android:layout_marginBottom="26.25dp"-->
-<!--        android:contentDescription="@string/icon_holder"-->
-<!--        android:src="@drawable/ic_fluent_drop"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/td_grade" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/td_humidity_percent"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="9.75dp"-->
-<!--        android:layout_marginBottom="23dp"-->
-<!--        android:fontFamily="@font/inter"-->
-<!--        android:text="@string/td_humidity_percent"-->
-<!--        android:textColor="@color/black_light"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/hourlyForecast_item"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/td_icon_drop" />-->
+        layout="@layout/today_hourly_item" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hourlyForecast_item"
