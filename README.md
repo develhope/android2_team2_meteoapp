@@ -13,7 +13,7 @@ We will follow [figma](https://www.figma.com/file/GPQcB8SKX8XqOfWA3T0o0r/UX%26De
 - A first step could be create all the stuff to make the ui/ux part work with mocked info.
 This means to create all the screens, all data classes needed to fill ui and an object that contains all the data related to the ui.
 - A second step is to use info from network using dto and connect the objects with ui related object.
-- A third step is to save and retrieve informations from local storage and use them as place holder.
+- A third step is to save and retrieve informations from local storage and use them as place savedCityViewHolder.
 - A fourth step could be to create a screen with all the supported location and have weather for the location selected by the user.
 
 ###DeadLines

@@ -8,12 +8,10 @@ data class WeeklyCard(
     val precipitation   : Int,
     val wind            : Int,
     val date            : OffsetDateTime,
-    val weather         : Weather) {
-}
+    val weather         : Weather)
 
 sealed class ForecastScreenItem {
-    data class Forecast (val weeklyCard: WeeklyCard)            : ForecastScreenItem()
-    data class Title    (val city:String, val region:String)    : ForecastScreenItem()
-    data class Subtitle (val subTitle: String)                  : ForecastScreenItem()
+    data class Forecast(val weeklyCard: WeeklyCard)         : ForecastScreenItem()
+    data class Title(val city: String, val region: String)  : ForecastScreenItem()
+    data class Subtitle(val subTitle: String)               : ForecastScreenItem()
 }
-

@@ -1,8 +1,9 @@
 package co.develhope.meteoapp.network
 
-import co.develhope.meteoapp.adapters.OffsetDateTimeCustomAdapter
-import co.develhope.meteoapp.data.dataTransfer.DailySummary
+import co.develhope.meteoapp.ui.ui.adapters.OffsetDateTimeCustomAdapter
+import co.develhope.meteoapp.data.dataModel.DailyForecast
 import co.develhope.meteoapp.data.dataModel.WeeklyCard
+import co.develhope.meteoapp.utils.FORECAST_BASE_URL
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -16,11 +17,9 @@ class RetrofitInstance {
 
     companion object {
 
-        private const val BASE_URL = "https://api.open-meteo.com/"
-
         private fun getRetrofitInstance(client: OkHttpClient, gson: Gson): Retrofit =
             Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(FORECAST_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()
@@ -41,7 +40,6 @@ class RetrofitInstance {
                 .connectTimeout(30, TimeUnit.SECONDS).addInterceptor(loggingInterceptor).build()
         }
 
-
         private val retrofit = getRetrofitInstance(
             client = getOkHttpClient(loggingInterceptor = getHttpLoggingInterceptor()),
             gson = getGson()
@@ -51,11 +49,11 @@ class RetrofitInstance {
             retrofit.create(RetroServiceInterface::class.java)
 
         suspend fun getForecastSummary(): List<WeeklyCard> {
-            return apiService.getSummaryForecast().body()?.daily?.mapToDomain()?: emptyList()
+            return apiService.getSummaryForecastWeekly().body()?.daily?.mapToDomain()?: emptyList()
         }
 
-        suspend fun getHourlySpecificDay(): DailySummary? {
-            return apiService.getHourlySpecificDay().body()
+        suspend fun getDailyForecast(startDate:String, endDate:String): List<DailyForecast> {
+            return apiService.getHourlyForecastDaily(start_date = startDate, end_date = endDate).body()?.hourly?.mapToDomain()?: emptyList()
         }
     }
 }

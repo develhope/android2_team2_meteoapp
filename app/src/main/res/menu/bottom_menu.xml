@@ -9,12 +9,17 @@
     <item
         android:id="@+id/today_fragment"
         android:icon="@drawable/ic_day"
-        android:title="@string/icon_today"/>
+        android:title="@string/icon_today"
+    />
 
     <item
         android:id="@+id/tomorrow_fragment"
         android:icon="@drawable/ic_day"
         android:title="@string/icon_tomorrow"/>
 
+    <item
+        android:id="@+id/search_fragment"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"/>
 
 </menu>
